@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "./axios";
+import "./Row.css"
 
 const baseURL = "https://image.tmdb.org/t/p/original/";
 
-function Row({ title , fetchUrl }) {
+function Row({ title, fetchUrl }) {
   const [movies, setMovies] = useState([]);
   //A snippet of code which runs based on a specific condition
   useEffect(() => {
@@ -15,15 +16,19 @@ function Row({ title , fetchUrl }) {
     }
     fetchData();
   }, [fetchUrl]);
-//   console.log(movies);
+  //   console.log(movies);
   console.table(movies);
 
   return (
     <div className="row">
       <h2>{title} </h2>
-      <div className="row__posters">
-        {movies.map(movie => (
-          <img src={`${baseURL}${movie.poster_path}`} alt={movie.name} />
+      <div className="row_posters">
+        {movies.map((movie) => (
+          <img
+            className="row_poster"
+            src={`${baseURL}${movie.poster_path}`}
+            alt={movie.name}
+          />
         ))}
       </div>
     </div>
