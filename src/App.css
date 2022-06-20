@@ -1,3 +1,10 @@
 *{
   margin: 0;
 }
+body{
+  font-family: 'Time New Roman';
+}
+.app{
+  background-color: #111;
+
+}
